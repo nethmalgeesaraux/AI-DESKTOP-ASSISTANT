@@ -39,26 +39,33 @@ def send_message():
         message_var.set("")
 
 
+input_row = Frame(frame, bg="#1e1e1e")
+input_row.place(x=75, y=315, width=450, height=40)
+
 message_entry = Entry(
-    frame,
+    input_row,
     textvariable=message_var,
     font=("Arial", 12),
-    width=28,
-    bd=2
+    bd=0,
+    relief="flat",
+    highlightthickness=1,
+    highlightbackground="#8a8a8a",
+    highlightcolor="#8a8a8a",
+    insertbackground="black"
 )
-message_entry.place(x=150, y=320)
+message_entry.place(x=0, y=0, width=340, height=40)
 
 send_btn = Button(
-    frame,
+    input_row,
     text="Send",
-    font=("Arial", 11, "bold"),
+    font=("Arial", 12, "bold"),
     bg="#2d89ef",
     fg="white",
+    activebackground="#2d89ef",
+    activeforeground="white",
     bd=0,
-    padx=14,
-    pady=4,
     command=send_message
 )
-send_btn.place(x=410, y=317)
+send_btn.place(x=344, y=0, width=106, height=40)
 
 root.mainloop()
